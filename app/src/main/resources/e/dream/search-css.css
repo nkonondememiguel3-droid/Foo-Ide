@@ -1,0 +1,50 @@
+.search-field {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+  -fx-padding: 4 0 4 0;
+  -fx-prompt-text-fill: #8b8b8b;
+}
+
+/* the focused rules must repeat everything, they don't inherit */
+.search-field:focused {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+  -fx-prompt-text-fill: #8b8b8b;
+}
+
+.search-icon {
+  -fx-icon-color: #8b8b8b;
+  -fx-icon-size: 15px;
+}
+
+.flat-button {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-background-radius: 4;
+  -fx-border-color: #d4d4d4;
+  -fx-border-width: 1;
+  -fx-border-radius: 4;
+  -fx-text-fill: #2b2b2b;
+}
+
+.flat-button:hover {
+  -fx-background-color: #f2f2f2;
+  -fx-background-insets: 0;
+}
+
+.flat-button:armed,
+.flat-button:pressed {
+  -fx-background-color: #e6e6e6;
+  -fx-background-insets: 0;
+}
+
+/* must come last — same specificity, later wins */
+.flat-button:focused {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-border-color: #d4d4d4;
+}
