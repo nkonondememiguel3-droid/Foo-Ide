@@ -36,6 +36,9 @@ dependencies {
 
     // Source: https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-fontawesome5-pack
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.4.0")
+
+    // Source: https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx
+    implementation("org.fxmisc.richtext:richtextfx:0.11.7")
 }
 
 testing {
