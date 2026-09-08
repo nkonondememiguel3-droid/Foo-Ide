@@ -12,4 +12,5 @@ plugins {
 }
 
 rootProject.name = "foo-ide"
-include("app")
+include("app", "sandbox")
+
