@@ -1,9 +1,29 @@
 package e.dream.learn;
 
-public class Sandbox {
+import atlantafx.base.theme.PrimerLight;
 
-  public static void main( String[] args ) {
-    System.out.println("hello, world!");
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.fxml.FXMLLoader;
+
+import java.io.IOException;
+
+public class Sandbox extends Application {
+
+  @Override
+  public void start( Stage stage ) throws IOException {
+
+    Application.setUserAgentStylesheet( new PrimerLight().getUserAgentStylesheet() );
+
+    FXMLLoader fxmlLoader = new FXMLLoader( Sandbox.class.getResource("sandbox-main-view.fxml") );
+    Scene scene = new Scene(fxmlLoader.load());
+
+    stage.setTitle("Sandbox");
+    stage.setScene(scene);
+    stage.show();
+
   }
+
 }
 
