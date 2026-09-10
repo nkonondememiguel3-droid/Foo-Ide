@@ -3,6 +3,17 @@
 
 [versions]
 guava = "33.4.5-jre"
+javafx = "21.0.12"
+atlantafx = "2.0.0"
+ikonli = "12.4.0"
+richtextfx = "0.11.7"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
+javafx-fxml = { module = "org.openjfx:javafx-fxml", version.ref = "javafx" }
+javafx-controls = { module = "org.openjfx:javafx-controls", version.ref = "javafx" }
+atlantafx = { module = "io.github.mkpaz:atlantafx-base", version.ref = "atlantafx" }
+ikonli = { module = "org.kordamp.ikonli:ikonli-core", version.ref = "ikonli" }
+ikonli-javafx = { module = "org.kordamp.ikonli:ikonli-javafx", version.ref = "ikonli" }
+ikonli-fontawesome5-pack = { module = "org.kordamp.ikonli:ikonli-fontawesome5-pack", version.ref = "ikonli" }
+richtextfx = { module = "org.fxmisc.richtext:richtextfx", version.ref = "richtextfx" }

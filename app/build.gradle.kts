@@ -18,27 +18,16 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation(libs.guava)
+//    implementation(libs.guava)
+//
+    implementation(libs.javafx.fxml)
+    implementation(libs.javafx.controls)
+    implementation(libs.atlantafx)
+    implementation(libs.ikonli)
+    implementation(libs.ikonli.fontawesome5.pack)
+    implementation(libs.ikonli.javafx)
+    implementation(libs.richtextfx)
 
-    // Source: https://mvnrepository.com/artifact/org.openjfx/javafx-fxml
-    implementation("org.openjfx:javafx-fxml:21.0.12")
-    // Source: https://mvnrepository.com/artifact/org.openjfx/javafx-controls
-    implementation("org.openjfx:javafx-controls:21.0.12")
-
-    implementation("io.github.mkpaz:atlantafx-base:2.0.0")
-
-    // Source: https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-core
-    implementation("org.kordamp.ikonli:ikonli-core:12.4.0")
-
-    // Source: https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-javafx
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
-
-    // Source: https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-fontawesome5-pack
-    implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.4.0")
-
-    // Source: https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx
-    implementation("org.fxmisc.richtext:richtextfx:0.11.7")
 }
 
 testing {

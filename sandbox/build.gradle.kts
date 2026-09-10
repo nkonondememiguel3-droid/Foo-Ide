@@ -8,15 +8,14 @@ repositories {
 }
 
 dependencies {
-    implementation("org.openjfx:javafx-fxml:21.0.12")
-    implementation("org.openjfx:javafx-controls:21.0.12")
-    implementation("io.github.mkpaz:atlantafx-base:2.0.0")
-    implementation("org.kordamp.ikonli:ikonli-core:12.4.0")
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
-    implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.4.0")
 
-    // Source: https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx
-    implementation("org.fxmisc.richtext:richtextfx:0.11.7")
+    implementation(libs.javafx.fxml)
+    implementation(libs.javafx.controls)
+    implementation(libs.atlantafx)
+    implementation(libs.ikonli)
+    implementation(libs.ikonli.fontawesome5.pack)
+    implementation(libs.ikonli.javafx)
+    implementation(libs.richtextfx)
 
     // uncomment to reuse widgets and models from the main app
     // implementation(project(":app"))
