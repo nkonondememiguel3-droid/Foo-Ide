@@ -1,9 +1,9 @@
 plugins {
-    id("java")
+    application
 }
 
-group = "e.dream.learn"
-version = "unspecified"
+// group = "e.dream.learn"
+// version = "unspecified"
 
 repositories {
     mavenCentral()
@@ -13,6 +13,8 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    testImplementation("org.assertj:assertj-core:3.27.7")
 }
 
 tasks.test {
@@ -25,3 +27,14 @@ tasks.test {
     }
 
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = "e.dream.learn.Main"
+}
+

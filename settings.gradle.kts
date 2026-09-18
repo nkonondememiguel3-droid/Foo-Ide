@@ -12,7 +12,5 @@ plugins {
 }
 
 rootProject.name = "foo-ide"
-include("app", "sandbox")
+include("app", "sandbox", "lsp-client")
 
-
-include("lsp-client")
