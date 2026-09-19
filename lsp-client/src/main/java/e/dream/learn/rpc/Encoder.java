@@ -3,44 +3,35 @@ package e.dream.learn.rpc;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 /* encode a message in JSON-RCP 2.0 to send to a lsp server. */
-public class Encoder {
+public final class Encoder {
 
-    private static ObjectMapper mapper;
+    private static final ObjectMapper mapper = new ObjectMapper();
 
-    public Encoder() {
-        if (mapper == null) {
-            mapper = new ObjectMapper();
-        }
-    }
-
-    public Optional<String> encodeMsg(Object object) {
-
-        StringBuilder builder = new StringBuilder();
+    public static Optional<byte[]> encodeMsg(Object object) {
+        if (object == null) return Optional.empty();
 
         // convert the value into a JSON value.
         try {
-            if (object != null) {
-                String objectJson = mapper.writeValueAsString(object);
+            byte[] body = mapper.writeValueAsBytes(object);
+            byte[] header = ("Content-Length: " + body.length + "\r\n\r\n") // construct a string.
+                    .getBytes(StandardCharsets.US_ASCII); // extract the byte out it.
 
-                // construct the header part.
-                builder.append(String.format("Content-Length: %d\r\n", objectJson.length()));
-                builder.append("Content-Type: utf-8\r\n");
-
-                // construct the content part.
-                builder.append("\r\n");
-                builder.append("{");
-                builder.append(objectJson);
-                builder.append("}");
-
-                return Optional.of(builder.toString());
-            } else {
-                return Optional.empty();
-            }
+            return Optional.of(
+                    ByteBuffer
+                            .allocate(header.length + body.length)
+                            .put(header)
+                            .put(body)
+                            .array()
+            );
         } catch (JsonProcessingException e) {
-            return Optional.empty();
+            throw new IllegalArgumentException(
+                    "not serializable: " + object.getClass().getName(), e
+            );
         }
     }
 

@@ -25,11 +25,9 @@ which is the only encoding supported right now.
 ` Content-Length: ...\r\n
   Content-Type: utf-8\r\n
 \r\n
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "textDocument/completion",
-    "params": {
-        ...
-    }
-}`
+"jsonrpc": "2.0",
+"id": 1,
+"method": "textDocument/completion",
+"params": {
+    ...
+} `
